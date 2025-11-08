@@ -144,6 +144,7 @@
         Console.WriteLine("- Goose Feathers");
     }
 
+
     // Method4 PickArrowFletching
     static ArrowFletching PickArrowFletching() {
         Console.Write("Choose the arrow fletching: ");
@@ -175,6 +176,7 @@
         Console.WriteLine("Should be between 60 and 100 cm");
     }
 
+
     // Method6: ChooseArrowShaft
     static int PickArrowShaft() {
         do {
@@ -205,6 +207,7 @@
 
     }
 
+
     // Method8: ArrowHeadCost
     static float ArrowHeadCost(ArrowHead head) {
         // ARROW HEAD COST
@@ -221,6 +224,7 @@
             return 0;
     }
 
+
     // Method9: ArrowFletching Cost
     static float ArrowFletchingCost(ArrowFletching fletching) {
         if (fletching == ArrowFletching.Plastic) {
@@ -236,10 +240,12 @@
             return 0;
     }
 
+
     // Method10: ArrowShaftCost
     static float ArrowShaftCost(float shaft) {
         return (shaft * 0.05f);
     }
+
 
     // Method11: DisplayArrowType
     static void DiplayArrowTypes() {
@@ -252,6 +258,7 @@
         Console.WriteLine($"1: PreBuilt Arrow");
         Console.WriteLine($"2: Custom Arrow");
     }
+
 
     // Method12: PickArrowType
     static ArrowType PickArrowType() {
@@ -277,6 +284,7 @@
         } while (true);
     }
 
+
     // Method13: Display prebuilt arrow types
     static void DisplayPrebuiltArrows() {
         for (int i = 0; i < 80; i++) {
@@ -289,6 +297,7 @@
         Console.WriteLine("2: Marksman Arrow");
         Console.WriteLine("3: Elite Arrow");
     }
+
 
     // Method14: Pick Prebuilt Arrow Type
     static Arrow PickPrebuitArrow() {
@@ -315,6 +324,7 @@
         
     }
 
+    
     // Method15: Custom Arrow Display Message
     static void DisplayCustomArrows() {
         for (int i = 0; i < 80; i++) {
@@ -325,6 +335,7 @@
         Console.WriteLine("\n");
     }
 
+    
     // ENUMS
     enum ArrowHead { Steel, Wood, Obsidian }
     enum ArrowFletching { Plastic, TurkeyFeathers, GooseFeathers }

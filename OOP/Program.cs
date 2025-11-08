@@ -1,6 +1,5 @@
-﻿
-class Program {
+﻿class Program {
     static void Main() {
-        L21Static.Run();
+        L23ObjectOrientedDesign.Run();
     }
 }
