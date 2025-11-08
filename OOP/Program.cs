@@ -1,5 +1,5 @@
 ﻿class Program {
     static void Main() {
-        L23ObjectOrientedDesign.Run();
+        L24CatacombsOfTheClass.Run();
     }
 }
