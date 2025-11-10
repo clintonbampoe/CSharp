@@ -2,15 +2,28 @@
 {
     public static void Run () 
     {
-        Door newDoor = new(1855);
+        Console.Title = "PASSWORD VALIDATOR";
+        for(int i = 90;  i < 90; i++)
+        {
+            Console.Write("-");
+        }
+        do
+        {
+            Console.WriteLine();
+            Console.Write("Enter your password: ");
+            string input = TakeInput();
+            PasswordValidator validator = new(input);
 
-        newDoor.ChangeDoorState();
+            if (validator.IsValid)
+            {
+                Console.WriteLine("Valid");
+            }
+            else
+            {
+                Console.WriteLine("Invalid");
+            }
+        } while (true);
 
-        newDoor.ChangePassCode();
-
-        newDoor.ChangeDoorState();
-
-        newDoor.ChangeDoorState();
         
     }
 
@@ -267,7 +280,56 @@
         public enum DoorState { Locked, Closed, Open}
     }
 
+
+    // class5: THE PASSWORD VALIDATOR
+    class PasswordValidator
+    {
+
+        // properties
+        public bool IsValid { get; private set; } = false;
+
+        // Constructor
+        public PasswordValidator(string password)
+        {
+            bool upperCasePresent = false;
+            bool lowerCasePresent = false;
+            bool digitPresent = false;
+
+            if (password.Length >= 6 && password.Length <= 13)
+            {
+                // iterate through string and checks which of the requirements are met
+                foreach (char ch in password)
+                {
+                    if (ch == '&' || ch == 'T')
+                    {
+                        IsValid = false;
+                        return;
+                    }
+                    else
+                    {
+                        if (char.IsUpper(ch))
+                        {
+                            upperCasePresent = true;
+                        }
+                        else if (char.IsLower(ch))
+                        {
+                            lowerCasePresent = true;
+                        }
+                        else if (char.IsDigit(ch))
+                        {
+                            digitPresent = true;
+                        }
+                    }
+                } 
+            }
+
+            //
+            if (upperCasePresent && lowerCasePresent && digitPresent)
+            {
+                IsValid = true;
+                return;
+            }
+
+        }
+    }
 }
-
-
-
