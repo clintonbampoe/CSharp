@@ -23,7 +23,6 @@
                 Console.WriteLine("Invalid");
             }
         } while (true);
-
         
     }
 

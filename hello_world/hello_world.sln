@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36616.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicsBossFight", "..\basicsBossFight\BasicsBossFight.csproj", "{888D2FA8-7A3C-463A-B04A-0B1E1957596C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "..\OOP\OOP.csproj", "{4243502E-7EBA-46E3-91FF-A255B9279A40}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld.csproj", "{D5FE90A4-BA6A-D263-5937-CC159730F5CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,18 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{888D2FA8-7A3C-463A-B04A-0B1E1957596C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{888D2FA8-7A3C-463A-B04A-0B1E1957596C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{888D2FA8-7A3C-463A-B04A-0B1E1957596C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{888D2FA8-7A3C-463A-B04A-0B1E1957596C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4243502E-7EBA-46E3-91FF-A255B9279A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4243502E-7EBA-46E3-91FF-A255B9279A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4243502E-7EBA-46E3-91FF-A255B9279A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4243502E-7EBA-46E3-91FF-A255B9279A40}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5FE90A4-BA6A-D263-5937-CC159730F5CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5FE90A4-BA6A-D263-5937-CC159730F5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5FE90A4-BA6A-D263-5937-CC159730F5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5FE90A4-BA6A-D263-5937-CC159730F5CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

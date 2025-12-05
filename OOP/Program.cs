@@ -1,5 +1,5 @@
-﻿class Program {
+﻿class OOP {
     static void Main() {
-        L24CatacombsOfTheClass.Run();
+        L25Inheritance.Run();
     }
 }
