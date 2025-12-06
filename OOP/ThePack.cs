@@ -1,4 +1,4 @@
-﻿class L25Inheritance
+﻿class ThePack
 {
     public static void Run()
     {
@@ -52,33 +52,72 @@
     // DERIVED CLASSES
     class Arrow : InventoryItem
     {
-        //
+        // constructor
         public Arrow() : base(0.1f, 0.05f) { }
+
+        // overide to string
+        public override string ToString()
+        {
+            return "Arrow";
+        }
     }
 
     class Bow : InventoryItem
     {
+        // constructor
         public Bow() : base(1.0f, 4.0f) { }
+
+        // override ToString
+        public override string ToString()
+        {
+            return "Bow";
+        }
     }
 
     class Rope : InventoryItem
     {
+        // constructor
         public Rope() : base(1.0f, 1.5f) { }
+
+        //
+        public override string ToString()
+        {
+            return "Rope";
+        }
     }
 
     class Water : InventoryItem
     {
+        //
         public Water() : base(2.0f, 3.0f) { }
+
+        // 
+        public override string ToString()
+        {
+            return "Water";
+        }
     }
 
     class FoodRations : InventoryItem
     {
         public FoodRations() : base(1.0f, 0.5f) { }
+
+        //
+        public override string ToString()
+        {
+            return "Food Rations";
+        }
     }
 
     class Sword : InventoryItem
     {
         public Sword() : base(5.0f, 3.0f) { }
+
+        //
+        public override string ToString()
+        {
+            return "Sword";
+        }
     }
 
 
@@ -88,7 +127,7 @@
         // constants
         public float WeightLimit { get; }
         public float VolumeLimit { get; }
-        public static int ItemLimit { get; } = 5;
+        public static int ItemLimit { get; } = 3;
 
         // variables
         public float CurrentWeight { get; private set; }
@@ -113,7 +152,7 @@
 
 
         // Methods
-        // Method1: Add
+        // Add items to pack
         public bool Add(InventoryItem item)
         {
             if ((ItemCount + 1) <= ItemLimit)
@@ -143,13 +182,34 @@
             return false;
         }
 
-        //
+        // View items in pack
+        public void GetPackContents()
+        {
+            for (int i = 0; i < 80; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("YOUR PACK CONTAINS: ");
+            for (int i = 0; i < ItemCount; i++)
+            {
+                Console.WriteLine($"{i + 1}. {Inventory[i]?.ToString()}");
+            }
+            Console.WriteLine();
+        }
         
 
 
         // Report Item Count
         public void GetItemCount()
         {
+            for(int i = 0; i < 80; i++)
+            {
+                Console.Write("-");
+            }
+            Console.WriteLine();
+
             Console.WriteLine("ITEM COUNT: ");
             Console.WriteLine($"{ItemCount}/{ItemLimit}");
             Console.WriteLine();
@@ -173,22 +233,22 @@
     }
 
 
-    // create new pack
+    // METHODS
     static Pack CreateNewPack()
     {
         // 
         Console.WriteLine("Enter item limit for this pack");
-        Console.Write("> ");
+        Console.Write($"{"> ", 2}");
         int itemlimit = Convert.ToInt32(TakeInput());
         Console.WriteLine();
 
         Console.WriteLine("Enter the volume limit");
-        Console.Write("> ");
+        Console.Write($"{"> ", 2}");
         float volumelimit = Convert.ToSingle(TakeInput());
         Console.WriteLine();
 
         Console.WriteLine("Enter the weight limit");
-        Console.Write("> ");
+        Console.Write($"{"> ",2}");
         float weightlimit = Convert.ToSingle(TakeInput());
         Console.WriteLine();
 
@@ -241,7 +301,7 @@
             //
             Console.WriteLine("Choose the items you want to add");
             Console.WriteLine("Enter the name or number of the item you want to add ");
-            Console.Write("> ");
+            Console.Write($"{"> ",2}");
             string input = TakeInput();
 
             switch (input.ToLower())
@@ -250,36 +310,42 @@
                 case "arrow":
                     Arrow newArrow = new();
                     pack.Add(newArrow);
+                    Console.WriteLine("Arrow added to pack");
                     break;
 
                 case "2":
                 case "bow":
                     Bow newBow = new();
                     pack.Add(newBow);
+                    Console.WriteLine("Bow added to pack");
                     break;
 
                 case "3":
                 case "rope":
                     Rope newRope = new();
                     pack.Add(newRope);
-                    break;
+                    Console.WriteLine("Bow added to pack");
+                break;
 
                 case "4":
                 case "water":
                     Water newWater = new();
                     pack.Add(newWater);
+                    Console.WriteLine("Water added to pack");
                     break;
 
                 case "5":
                 case "food rations":
                     FoodRations newRation = new();
                     pack.Add(newRation);
+                    Console.WriteLine("Food Ration added to pack");
                     break;
 
                 case "6":
                 case "sword":
                     Sword newSword = new();
                     pack.Add(newSword);
+                    Console.WriteLine("Added Sword to pack");
                     break;
             }
     }
@@ -301,12 +367,13 @@
             Console.WriteLine("3. Get current item count");
 
             Console.WriteLine("Enter Choice");
-            Console.WriteLine("> ");
+            Console.Write($"{"> ", 5}");
             int input = Convert.ToInt32(TakeInput());
             switch (input)
             {
                 case 1:
                     DisplayInventoryItems();
+                    pack.GetPackContents();
                     AddItemToPack(pack);
                     break;
 
