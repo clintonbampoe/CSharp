@@ -28,9 +28,6 @@
     }
 
     class Arrow {
-        private ArrowHead _head;
-        private ArrowFletching _fletching;
-        private int _shaft;
 
         public ArrowHead Head { get; set; } = ArrowHead.Steel;
         public ArrowFletching Fletching { get; set; } = ArrowFletching.Plastic;

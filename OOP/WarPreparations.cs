@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-class WarPrepartions
+﻿class WarPrepartions
 {
     public static void Run()
     {
@@ -9,16 +7,16 @@ class WarPrepartions
 
         Sword basicSword = new(SwordMaterial.Steel, GemStone.none, swordLength, crossguardLength);
 
-        Sword basicSword2 = basicSword with { material = SwordMaterial.Steel, gem = GemStone.emerald };
+        Sword basicSword2 = basicSword with { Material = SwordMaterial.Steel, Gem = GemStone.emerald };
 
-        Sword basicSword3 = basicSword with { material = SwordMaterial.Binarium, gem = GemStone.bitstone };
+        Sword basicSword3 = basicSword with { Material = SwordMaterial.Binarium, Gem = GemStone.bitstone };
 
         Console.WriteLine($"{basicSword.ToString()}");
         Console.WriteLine($"{basicSword2.ToString()}");
         Console.WriteLine($"{basicSword3.ToString()}");
     }
 
-    public record Sword(SwordMaterial material, GemStone gem, float length, float crossguard);
+    public record Sword(SwordMaterial Material, GemStone Gem, float Length, float CrossGuard);
 
    
 }
