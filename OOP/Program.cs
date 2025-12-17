@@ -1,5 +1,5 @@
 ﻿class OOP {
     static void Main() {
-        TheColoredItems.Run();
+        BossBattle.Run();
     }
 }
