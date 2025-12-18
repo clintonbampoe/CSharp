@@ -1,5 +1,7 @@
 ﻿
 
+using System.Linq.Expressions;
+
 class BossBattle
 {
     public static void Run()
@@ -28,7 +30,7 @@ class BossBattle
 
     }
 
-    // Classes
+    // Classest
     class Board
     {
         // Constructors
@@ -326,7 +328,6 @@ class BossBattle
         Console.ForegroundColor = ConsoleColor.White;
         return input;
     }
-
     
 
     // Enums
