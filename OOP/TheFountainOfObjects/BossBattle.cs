@@ -9,6 +9,7 @@ class BossBattle
         Move move = new(size);
 
         game.InitializeGame();
+        DateTime programStartTime = DateTime.Now;
         game.Grid = Pit.SetNew(game.Grid, size);
         do
         {
@@ -33,11 +34,16 @@ class BossBattle
             } 
             
         } while (!game.GameOver);
+        
+        DateTime programStopTime = DateTime.Now;
+        TimeSpan timeElapsed = programStopTime - programStartTime;
 
         if (game.GameWon)
             Console.WriteLine("You win");
         else
             Message.PrintErrorMessage("You lost!"); // not an error, just wanted the red text color
+
+        Console.WriteLine($"You spent {timeElapsed.Minutes} minutes and {timeElapsed.Seconds} seconds exploring the caverns.");
 
     }
 
