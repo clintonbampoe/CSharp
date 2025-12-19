@@ -78,7 +78,7 @@
     static string TakeInput()
     {
         Console.ForegroundColor = ConsoleColor.Green;
-        string? input = Console.ReadLine();
+        string input = Console.ReadLine() ?? "";
         Console.ForegroundColor = ConsoleColor.White;
         return input;
     }
