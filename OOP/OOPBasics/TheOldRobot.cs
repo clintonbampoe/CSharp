@@ -8,7 +8,7 @@
         TakeCommands(newRobot);
 
         newRobot.Run();
-        
+
     }
 
     // Base Classes
@@ -17,11 +17,11 @@
         public int X { get; set; }
         public int Y { get; set; }
         public bool IsPowered { get; set; }
-        public IRobotCommand?[] Commands { get; } = new IRobotCommand?[3];
+        public List<IRobotCommand> Commands { get; } = new List<IRobotCommand>();
 
         public void Run()
         {
-            foreach (IRobotCommand? command in Commands)
+            foreach (IRobotCommand command in Commands)
             {
                 command?.Run(this);
                 Console.WriteLine($"[{X} {Y} {IsPowered}]");
@@ -131,10 +131,12 @@
 
     public static void TakeCommands(Robot robot)
     {
-        Console.WriteLine("Enter 3 Commands");
-        for (int i = 0; i < 3; i++)
+        Console.WriteLine("Enter Commands");
+        Console.WriteLine("Enter 'stop' after all commands.");
+        bool stop = false;
+        do
         {
-            
+
             bool tryAgain;
             do
             {
@@ -145,37 +147,42 @@
 
                 switch (input.ToLower())
                 {
+                    // STATE COMMANDS
+                    case "stop":
+                        stop = true;
+                        break;
+
                     // POWER COMMANDS
                     case "on":
                         OnCommand on = new();
-                        robot.Commands[i] = on;
+                        robot.Commands.Add(on);
                         break;
 
                     case "off":
                         OffCommand off = new();
-                        robot.Commands[i] = off;
+                        robot.Commands.Add(off);
                         break;
 
 
                     // MOVEMENT COMMANDS
                     case "north":
                         NorthCommand north = new();
-                        robot.Commands[i] = north;
+                        robot.Commands.Add(north);
                         break;
 
                     case "south":
                         SouthCommand south = new();
-                        robot.Commands[i] = south;
+                        robot.Commands.Add(south);
                         break;
 
                     case "east":
                         EastCommand east = new();
-                        robot.Commands[i] = east;
+                        robot.Commands.Add(east);
                         break;
 
                     case "west":
                         WestCommand west = new();
-                        robot.Commands[i] = west;
+                        robot.Commands.Add(west);
                         break;
 
                     default:
@@ -186,7 +193,7 @@
                 }
 
             } while (tryAgain);
-        }
+        } while (!stop);
     }
 
 }
