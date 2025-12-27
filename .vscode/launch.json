@@ -4,16 +4,27 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    {
-        "name": "OOP",
-        "type": "coreclr",
-        "request": "launch",
-        "preLaunchTask": "build OOP",
-        "program": "${workspaceFolder}/OOP/bin/Debug/net8.0/OOP.dll",
-        "args": [],
-        "cwd": "${workspaceFolder}",
-        "stopAtEntry": false,
-        "console": "externalTerminal"
-    }
+        {
+            "name": "Advanced Concepts",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build: AdvancedConcepts",
+            "program": "${workspaceFolder}/AdvancedConcepts/bin/Debug/net9.0/AdvancedConcepts.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "OOP",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build OOP",
+            "program": "${workspaceFolder}/OOP/bin/Debug/net8.0/OOP.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "stopAtEntry": false,
+            "console": "externalTerminal"
+        }
     ]
 }

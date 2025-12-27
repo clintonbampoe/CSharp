@@ -8,6 +8,14 @@
 			"group": "build",
 			"problemMatcher": [],
 			"label": "build OOP"
+		},
+		{
+			"type": "dotnet",
+			"task": "build",
+			"file": "${workspaceFolder}/AdvancedConcepts/AdvancedConcepts.csproj",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "build: AdvancedConcepts"
 		}
 	]
 }
