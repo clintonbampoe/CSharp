@@ -1,5 +1,7 @@
-﻿class BossBattle1 {
-    public static void Run() {
+﻿class BossBattle
+{
+    public static void Run()
+    {
         // CODE START
         // PLAYER 1
         Console.Title = "BOSS BATTLE";
@@ -21,9 +23,11 @@
 
         Console.WriteLine("Player 2, it's your turn.");
 
-        do {
+        do
+        {
 
-            for (int i = 0; i < 80; i++) {
+            for (int i = 0; i < 80; i++)
+            {
                 Console.Write("-");
             }
             Console.WriteLine("\n");
@@ -38,7 +42,7 @@
             // damage
             damageStrength = Damage(round);
             Console.WriteLine($"The cannon is expected to deal {damageStrength} damage this round");
-            
+
             // player2 input
             Console.Write("Enter desired cannon range: ");
             Console.ForegroundColor = ConsoleColor.Green;
@@ -51,7 +55,7 @@
             // call DamageImpact logic
             DamageImpact(directHit);
 
-        } while (cityHealth > 0 &&  manticoreHealth > 0);
+        } while (cityHealth > 0 && manticoreHealth > 0);
 
 
         // GAME RESULT
@@ -62,55 +66,70 @@
 
         // METHODS
         // method1: Damage
-        int Damage (int round) {
-            if (round % 3 == 0 && round % 5 == 0) {
+        int Damage(int round)
+        {
+            if (round % 3 == 0 && round % 5 == 0)
+            {
                 return 10;
             }
-            else if (round % 3 == 0) {
+            else if (round % 3 == 0)
+            {
                 return 3;
             }
-            else if (round % 5 == 0) {
+            else if (round % 5 == 0)
+            {
                 return 3;
             }
-            else {
+            else
+            {
                 return 1;
             }
         }
 
         // Method2: ConfirmHit
-        string ConfirmHit (int cannonRange){
-            if (cannonRange == manticoreDistance) {
+        string ConfirmHit(int cannonRange)
+        {
+            if (cannonRange == manticoreDistance)
+            {
                 directHit = true;
                 return "That round was a DIRECT HIT!";
             }
-            else if (cannonRange > manticoreDistance) {
+            else if (cannonRange > manticoreDistance)
+            {
                 return "That round OVERSHOT the target.";
             }
-            else {
+            else
+            {
                 return "That round FELL SHORT of the target.";
             }
         }
 
         // Method3: DamageImpact
-        void DamageImpact(bool directHit) {
-            if (directHit) {
+        void DamageImpact(bool directHit)
+        {
+            if (directHit)
+            {
                 manticoreHealth -= damageStrength;
             }
-            else {
+            else
+            {
                 cityHealth--;
             }
         }
 
         // Method4: GameResult
-        void GameResult() {
-            if (cityHealth <= 0) {
+        void GameResult()
+        {
+            if (cityHealth <= 0)
+            {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("GAMEOVER!");
                 Console.WriteLine("You failed!!!");
                 Console.WriteLine("The MANTICORE DESTROYED THE CITY!");
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            else if (manticoreHealth <= 0) {
+            else if (manticoreHealth <= 0)
+            {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("The MANTICORE has been destroyed!!!");
                 Console.WriteLine("The CITY OF CONSOLAS has been saved!");

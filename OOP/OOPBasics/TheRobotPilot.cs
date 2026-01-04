@@ -63,7 +63,7 @@
         // method0: Station Manticore
         int StationManticore()
         {
-            Random rnd = new Random();
+            Random rnd = new();
             int position = rnd.Next(0, 100);
 
             return position;
