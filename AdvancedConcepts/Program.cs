@@ -4,7 +4,7 @@
     {
         public static void Main(string[] args)
         {
-            L35_ErrorHandling.Run();
+            L36_Delegates.Run();
         }
     }
 }
